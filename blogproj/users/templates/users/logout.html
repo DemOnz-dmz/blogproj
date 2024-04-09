@@ -1,11 +1,18 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
-    <div class="content-section">
-        <form action="" method="post">
+
+{% if user.is_authenticated %}
+    {% csrf_token %}
+    <a href="{% url 'logout' %}">Logout</a>
+    
+{% endif %}
+
+{% comment %} <div class="content-section">
+        <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Hello</legend>
                 <h4>You just logged out</h4>
@@ -17,5 +24,5 @@
 <!--        <div class="border-top pt-3">-->
 <!--            <small class="text-muted">Do you need an account? <a href="{% url 'register' %}">Register Now</a></small>-->
 <!--        </div>-->
-    </div>
+    </div> {% endcomment %}
 {% endblock content %}

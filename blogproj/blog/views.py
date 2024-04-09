@@ -5,6 +5,16 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
+# views.py
+
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
+    return redirect('login')  # Assuming 'login' is the name of the login URL pattern.
+
 # def home(request):
 #     context = {
 #         'posts': Post.objects.all()

@@ -4,6 +4,16 @@ from django.contrib import messages
 from .forms import UserRegisterForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
 
+# views.py
+
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
+    return redirect('login')  # Assuming 'login' is the name of the login URL pattern.
+
 
 def register(request):
     if request.method == "POST":
