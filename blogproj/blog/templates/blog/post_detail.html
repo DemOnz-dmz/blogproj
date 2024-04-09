@@ -10,8 +10,8 @@
                   {% if object.author == user %}
 
                     <div>
-                        <a class="btn btn-outline-success" href="{% url 'blog-update' object.id %}">Update</a>
-                        <a class="btn btn-outline-danger" href="{% url 'blog-delete' object.id %}">Delete</a>
+                        <a class="btn btn-outline-success" href="{% url 'blog-update' object.id %}">แก้ไข</a>
+                        <a class="btn btn-outline-danger" href="{% url 'blog-delete' object.id %}">ลบ</a>
                     </div>
                   {% endif %}
               </div>
